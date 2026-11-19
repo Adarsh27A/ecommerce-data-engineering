@@ -1,0 +1,69 @@
+	      # Databricks to ADLS Gen2 — Secure Connection Setup
+
+## Objective
+Connect Azure Databricks to the ADLS Gen2 storage account using Unity Catalog and an Azure Managed Identity, without putting storage account keys in notebook code.
+
+### 1. Create an Azure Databricks Access Connector
+- In Azure Portal, create or locate the **Access Connector for Azure Databricks**.
+- Example name: `unity-catalog-access-connector`.
+- Copy its full **Resource ID** from the connector's Overview page.
+- The resource ID identifies the Azure resource that provides the managed identity.
+
+### 2. Assign storage permissions in Azure
+- Open Storage Account → **Access Control (IAM)**.
+- Add a role assignment:
+  - Role: `Storage Blob Data Contributor`
+  - Assign access to: **Managed identity**
+  - Select the Databricks Access Connector.
+- This grants the connector permission to read and write data in the storage account.
+
+### 3. Create a new Unity Catalog storage credential
+In Databricks:
+1. Open **Catalog → Connect → Create a credential**.
+2. Select **Storage Credential**.
+3. Credential type: **Azure Managed Identity**.
+4. Enter a name, e.g. `ecommerce_raw_location_credential`.
+5. Paste the Access Connector's full Azure **Resource ID** into the Access Connector ID field.
+6. Leave the optional user-assigned managed identity ID blank if using the connector's system-assigned identity.
+7. Create the credential.
+
+**Purpose:** A storage credential tells Unity Catalog which identity to use when authenticating to Azure storage.
+
+### 4. Create the external location
+In Databricks:
+1. Open **Catalog → External Data → External Locations → Create external location**.
+2. Name: `ecommerce_raw_location`.
+3. Storage URL:
+
+   `abfss://raw-data@ecomdedatalake2026.dfs.core.windows.net/`
+
+4. Select the newly created credential: `ecommerce_raw_location_credential`.
+5. Validate and create the external location.
+
+**Purpose:** An external location combines the cloud storage path with the storage credential that authorizes access to it.
+
+### 5. Verify the connection
+- Open the external location and use **Browse** or **Test connection**.
+- Confirm that the folders are visible:
+  - `customers/`
+  - `products/`
+  - `orders/`
+  - `order_items/`
+  - `payments/`
+
+File Events permission checks may fail even when normal read, list, write, and delete checks succeed. File Events are optional for this project's current workflow.
+
+### 6. Access the raw files
+Once Unity Catalog access and permissions are configured, use the external location through supported Unity Catalog access methods. Avoid hardcoding storage account keys or setting `fs.azure.account.key` in notebook code, particularly with Serverless compute.
+
+## Important distinctions
+- **Access Connector:** Azure resource that supplies the managed identity.
+- **Storage credential:** Unity Catalog object that defines the identity used for authentication.
+- **External location:** Unity Catalog object that associates a storage path with a storage credential.
+- **Azure IAM role:** Grants the identity permission to access the storage account.
+- **Unity Catalog privileges:** Control which Databricks users can use the external location.
+
+### Project architecture so far
+MySQL → Azure Data Factory → ADLS Gen2 raw CSV files → Azure Databricks + PySpark.
+
+The next task is to read the five CSV files into Spark DataFrames, validate the data, and begin building the Silver layer.

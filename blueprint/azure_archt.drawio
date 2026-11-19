@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="NXPC2sG4pWl0SZ3qtHqs">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" value="" vertex="1">
+          <mxGeometry height="390" width="730" x="59" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="" vertex="1">
+          <mxGeometry height="330" width="700" x="79" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="135" width="300" x="200" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-7" edge="1" parent="1" source="RzJEtD8Jwm7E1PwXvW5C-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=gap;exitX=0.131;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="150" y="140" as="sourcePoint" />
+            <mxPoint x="200" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="azure" vertex="1">
+          <mxGeometry height="30" width="110" x="150" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=gap;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="129" y="250" as="sourcePoint" />
+            <mxPoint x="39" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="resource group&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="10" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="resource group(rg-ecommerce-de-project)- It groups our Data Factory and storage account together, making them easier to manage, monitor, and eventually clean up." vertex="1">
+          <mxGeometry height="30" width="800" x="20" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value=" Storage account (ecomdedatalake2026 ) -&amp;nbsp;It provides cloud storage that can hold our extracted data files. We enabled hierarchical namespace to support ADLS Gen2 features used in data engineering.&amp;nbsp;Azure Data Lake Storage (specifically ADLS Gen2) lives inside an Azure Storage Account" vertex="1">
+          <mxGeometry height="30" width="800" x="20" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-14" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=gap;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="204" y="300" as="sourcePoint" />
+            <mxPoint x="324" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="storage account&lt;div&gt;&amp;nbsp;ADLS GEN2&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="116" x="304" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="NOTE:&amp;nbsp;think of ADLS Gen2 as the technology/capability that you turn on for your entire Storage Account. Once it is turned on, the storage account becomes a Data Lake." vertex="1">
+          <mxGeometry height="30" width="920" x="20" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-18" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#b1ddf0;strokeColor=#10739e;" value="" vertex="1">
+          <mxGeometry height="80" width="60" x="260" y="317.5" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-24" edge="1" parent="1" source="RzJEtD8Jwm7E1PwXvW5C-18" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=gap;exitX=1;exitY=0;exitDx=0;exitDy=27.5;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="370" as="sourcePoint" />
+            <mxPoint x="510" y="120.46242068957731" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="container" vertex="1">
+          <mxGeometry height="30" width="60" x="490" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RzJEtD8Jwm7E1PwXvW5C-26" parent="1" style="shape=manualInput;boundedLbl=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" value="ADF" vertex="1">
+          <mxGeometry height="70" width="90" x="580" y="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
